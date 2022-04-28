@@ -1,0 +1,94 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    tools:context = ".MainActivity">
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "PorFavor"
+        android:id = "@+id/textView"
+        android:layout_centerHorizontal = "true"
+        android:layout_alignParentTop = "true"
+        android:textColor = "#ff7aff24"
+        android:textSize = "35dp" />
+
+    <TextView
+        android:text = "Login"
+        android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/Textview"
+        android:layout_below ="@+id/textView"
+        android:textSize = "35dp"
+        android:layout_centerHorizontal = "true" />
+
+    <EditText
+        android:layout_width = "120dp"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/editText1"
+        android:hint = "Enter Name"
+        android:layout_centerHorizontal = "true"
+        android:focusable = "true"
+        android:textColorHighlight = "@color/black"
+        android:textColorHint = "@color/purple_200"
+        android:layout_marginTop = "140dp"
+    />
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/editText1"
+        android:textColorHint="@color/purple_200"
+        android:hint="Password" />
+
+    <RadioButton android:id="@+id/radio_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin/Prof"
+        android:layout_centerHorizontal = "true"
+        android:layout_below="@id/editText2"
+        android:onClick="onRadioButtonClicked"/>
+    <RadioButton android:id="@+id/radio_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student/Club"
+        android:layout_centerHorizontal = "true"
+        android:layout_below="@id/radio_admin"
+        android:onClick="onRadioButtonClicked"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/buttony"
+        android:layout_below="@id/radio_student"
+    />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/button2"
+        android:layout_below="@id/radio_student"
+        android:layout_toRightOf="@id/buttony"
+    />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "Register?"
+        android:id = "@+id/TextView"
+        android:layout_centerHorizontal = "true"
+        android:layout_below="@id/button2"
+        android:textColor = "@color/black"
+        android:textSize = "20dp" />
+
+</RelativeLayout>

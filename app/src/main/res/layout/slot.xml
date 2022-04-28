@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    tools:context = ".MainActivity">
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "PorFavor"
+        android:id = "@+id/textView"
+        android:layout_centerHorizontal = "true"
+        android:layout_alignParentTop = "true"
+        android:textColor = "#ff7aff24"
+        android:textSize = "35dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
+        android:onClick="onBooking"
+        android:text="Book Room" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:onClick="onRequest"
+        android:text="Permission" />
+
+    <EditText
+        android:layout_width = "120dp"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/editText"
+        android:hint = "Enter Room Number"
+        android:layout_centerHorizontal = "true"
+        android:focusable = "true"
+        android:textColorHighlight = "@color/black"
+        android:textColorHint = "@color/purple_200"
+        android:layout_marginTop = "140dp"
+        />
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/editText"
+        android:textColorHint="@color/purple_200"
+        android:hint="Date" />
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/editText2"
+        android:textColorHint="@color/purple_200"
+        android:hint="Time" />
+
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onLogout"
+        android:text="Logout" />
+
+</RelativeLayout>
