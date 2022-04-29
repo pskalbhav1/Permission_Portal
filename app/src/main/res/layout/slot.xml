@@ -42,16 +42,15 @@
         android:text="Permission" />
 
     <EditText
-        android:layout_width = "120dp"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/editText"
-        android:hint = "Enter Room Number"
-        android:layout_centerHorizontal = "true"
-        android:focusable = "true"
-        android:textColorHighlight = "@color/black"
-        android:textColorHint = "@color/purple_200"
-        android:layout_marginTop = "140dp"
-        />
+        android:id="@+id/editText"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:focusable="true"
+        android:hint="Enter Room Number"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/purple_200" />
 
     <EditText
         android:layout_width="120dp"

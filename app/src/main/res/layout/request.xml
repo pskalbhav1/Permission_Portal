@@ -42,6 +42,39 @@
         android:onClick="onRequest"
         android:text="Permission" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:focusable="true"
+        android:hint="ID to be sent to"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/purple_200" />
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/editText"
+        android:textColorHint="@color/purple_200"
+        android:hint="Subject" />
+
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:layout_centerHorizontal = "true"
+        android:id="@+id/editText3"
+        android:layout_below="@+id/editText2"
+        android:textColorHint="@color/purple_200"
+        android:hint="Message" />
+
     <Button
         android:id="@+id/button3"
         android:layout_width="191dp"

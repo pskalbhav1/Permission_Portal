@@ -36,11 +36,12 @@ public class MainActivity extends Activity {
     Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request,b_send;
     EditText ed_name, ed_regno,ed_psw,ed_roomno,ed_date,ed_time,ed_to,ed_subject,ed_message;
     TextView t_login,t_register;
-    boolean admin=false,student=false;
+    boolean admin=false,student=false,status=false;
     String role="admin";
-    String regno="m",name="admin",psw="admin",c_role,Room_No="NLH203",Date="123456",Time="2";
+    String regno="m",name="admin",psw="admin",c_role,Room_No="NLH203",Date="123456",Time="2",To_Id="E1",Subject="Hi",Message="Hello";
     private DBHandler dbHandler;
     private DBSlot dbSlot;
+    private DBRequest dbRequest;
     ListView slot_list;
     private Object Spinner;
     int j;
@@ -320,10 +321,24 @@ public class MainActivity extends Activity {
         ed_subject = (EditText) findViewById(R.id.editText2);
         ed_message  = (EditText) findViewById(R.id.editText3);
         b_send=(Button) findViewById(R.id.button);
+        dbRequest = new DBRequest(MainActivity.this);
         b_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                To_Id = ed_to.getText().toString();
+                Subject = ed_subject.getText().toString();
+                Message= ed_message.getText().toString();
+                if (ed_to.getText().toString().isEmpty() || ed_subject.getText().toString().isEmpty() || ed_message.getText().toString().isEmpty())
+                {
+                    Toast.makeText(getApplicationContext(), "Fill in all the details", Toast.LENGTH_SHORT).show();
+                    onRequest(view);
+                }
+                else {
+                    dbRequest.addNewCourse(To_Id,Subject,Message,status);
+                    Toast.makeText(getApplicationContext(), "Request Sent successfully", Toast.LENGTH_SHORT).show();
+                    //Maybe add a view request function if time permits
+                    onProfile_student(view);
+                }
             }
         });
 
@@ -345,7 +360,7 @@ public class MainActivity extends Activity {
     }
 
     public void Check_Request(View v){
-
         setContentView(R.layout.grant_request);
+
     }
 }
