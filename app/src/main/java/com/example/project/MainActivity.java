@@ -1,6 +1,7 @@
 package com.example.project;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,10 +21,10 @@ public class MainActivity extends Activity {
     List<String> ListRoom = new ArrayList<>(Arrays.asList(Booked_Rooms));
     List<String> ListBookings = new ArrayList<>(Arrays.asList());
     List<String> BookingDetails = new ArrayList<>(Arrays.asList());
-    ListView booked, accept, reject;
+    ListView booked, accept, reject,pending;
     Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request,b_send,b_grant,b_deny;
     EditText ed_name, ed_regno,ed_psw,ed_roomno,ed_date,ed_time,ed_to,ed_subject,ed_message;
-    TextView t_login,t_register;
+    TextView t_login,t_register,t_pending,t_accept,t_reject,t_print;
     boolean admin=false,student=false;
     String status="0";
     String bookingDetails="";
@@ -214,6 +215,7 @@ public class MainActivity extends Activity {
         b_book=(Button)findViewById(R.id.button);
         b_request = (Button) findViewById(R.id.button1);
         b_logout=(Button) findViewById(R.id.button3);
+
         b_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -336,10 +338,17 @@ public class MainActivity extends Activity {
 
     public void view_Request(View v){
         setContentView(R.layout.request_view);
+        t_pending=(TextView) findViewById(R.id.TextView);
+        pending = findViewById(R.id.Pending);
+        ArrayAdapter<String> arr2;
+        arr2 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
+        pending.setAdapter(arr2);
+        t_accept=(TextView) findViewById(R.id.TextView1);
         accept = findViewById(R.id.accepted);
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
         accept.setAdapter(arr);
+        t_reject=(TextView) findViewById(R.id.TextView2);
         reject = findViewById(R.id.rejected);
         ArrayAdapter<String> arr1;
         arr1 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Rejected);
@@ -350,10 +359,18 @@ public class MainActivity extends Activity {
 
     public void view_aRequest(View v){
         setContentView(R.layout.request_aview);
+
+        t_pending=(TextView) findViewById(R.id.TextView);
+        pending = findViewById(R.id.Pending);
+        ArrayAdapter<String> arr2;
+        arr2 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
+        pending.setAdapter(arr2);
+        t_accept=(TextView) findViewById(R.id.TextView1);
         accept = findViewById(R.id.accepted);
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
         accept.setAdapter(arr);
+        t_reject=(TextView) findViewById(R.id.TextView2);
         reject = findViewById(R.id.rejected);
         ArrayAdapter<String> arr1;
         arr1 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Rejected);
@@ -376,7 +393,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.slot_aview);
 
         booked = findViewById(R.id.list);
-        //ListBookings.add(Booked_Rooms[j]);
         ArrayAdapter<String> arr;
         arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,BookingDetails);
         booked.setAdapter(arr);
@@ -390,6 +406,13 @@ public class MainActivity extends Activity {
         b_logout=(Button) findViewById(R.id.button3);
         b_grant=(Button) findViewById(R.id.button4);
         b_deny=(Button) findViewById(R.id.button5);
+
+        for(int i=0;i<Pending.size();i++)
+        {
+            t_print= (TextView) findViewById(R.id.textview);
+            t_print.setText(Pending.get(i));
+        }
+
 
         b_book.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -407,7 +430,7 @@ public class MainActivity extends Activity {
         b_grant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Accepted.add("bhbj");
+                Accepted.add(bookingDetails);
                 view_aRequest(v);
             }
         });
@@ -415,7 +438,7 @@ public class MainActivity extends Activity {
         b_deny.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Rejected.add("hvjbnknbvcxfcgvbhnj");
+                Rejected.add(bookingDetails);
                 view_aRequest(v);
             }
         });
