@@ -1,41 +1,53 @@
 <?xml version = "1.0" encoding = "utf-8"?>
 <RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
     xmlns:tools = "http://schemas.android.com/tools"
+    android:background="@drawable/gradient"
     android:layout_width="match_parent"
     android:layout_height = "match_parent"
     tools:context = ".MainActivity">
 
     <TextView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:text = "PorFavor"
-        android:id = "@+id/textView"
-        android:layout_centerHorizontal = "true"
-        android:layout_alignParentTop = "true"
-        android:textColor = "#ff7aff24"
-        android:textSize = "35dp" />
+        android:id="@+id/textView"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="PorFavor"
+        android:textColor="#E91E63"
+        android:textSize="48sp"
+        android:textStyle="normal|bold" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="61dp"
         android:layout_below="@id/textView"
-        android:text="Book Room"
-        android:onClick="onBooking"/>
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/rounded_textview"
+        android:onClick="onBooking"
+        android:text="Book Room" />
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/button"
-        android:text="Permission"
-        android:onClick="onRequest"/>
+        android:layout_width="148dp"
+        android:layout_height="61dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/rounded_textview"
+        android:onClick="onRequest"
+        android:text="Permission" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        android:onClick="onLogout"/>
+        android:layout_width="191dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="317dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_textview"
+        android:onClick="onLogout"
+        android:text="LOGOUT" />
 
 </RelativeLayout>

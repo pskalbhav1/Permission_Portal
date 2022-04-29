@@ -154,7 +154,7 @@ public class MainActivity extends Activity {
         b_register=(Button) findViewById(R.id.button);
         b_cancel = (Button) findViewById(R.id.button2);
         t_login = (TextView) findViewById(R.id.TextView1);
-        ed_name = (EditText) findViewById(R.id.editText);
+        ed_name = (EditText) findViewById(R.id.editText1);
         ed_psw = (EditText) findViewById(R.id.editText2);
         ed_regno = (EditText) findViewById(R.id.editText3);
 
@@ -268,8 +268,14 @@ public class MainActivity extends Activity {
     }
 
     public void onBooking(View v){
-
         setContentView(R.layout.slot);
+        b_book=(Button) findViewById(R.id.button3);
+        b_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBooking(v);
+            }
+        });
         ed_roomno = (EditText) findViewById(R.id.editText);
         ed_date = (EditText) findViewById(R.id.editText2);
         ed_time = (EditText) findViewById(R.id.editText3);

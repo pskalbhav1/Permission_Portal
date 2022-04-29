@@ -12,13 +12,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="285dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="42dp"
         android:fontFamily="@font/alfa_slab_one"
         android:includeFontPadding="true"
         android:padding="1dp"
@@ -91,13 +91,13 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="352dp"
-        android:layout_height="222dp"
+        android:layout_width="214dp"
+        android:layout_height="173dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="201dp"
         android:paddingStart="20dp"
         android:src="@drawable/favpng_permission_slip_school_clip_art" />
 

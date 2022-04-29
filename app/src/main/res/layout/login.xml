@@ -7,16 +7,17 @@
     tools:context = ".MainActivity">
 
     <TextView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:text = "PorFavor"
-        android:id = "@+id/textView"
-        android:layout_centerHorizontal = "true"
-        android:layout_alignParentTop = "true"
+        android:id="@+id/textView"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
         android:fontFamily="@font/alfa_slab_one"
+        android:text="PorFavor"
         android:textColor="#E91E63"
         android:textSize="48sp"
-        android:textStyle="normal|bold" />/>
+        android:textStyle="normal|bold" />
 
     <TextView
         android:id="@+id/Textview"
@@ -31,9 +32,9 @@
         android:id="@+id/editText1"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
-        android:focusable="true"
+        android:layout_marginTop="70dp"
         android:hint="Enter Name"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/purple_200" />
@@ -49,11 +50,6 @@
         android:inputType="textPassword"
         android:textColorHint="@color/purple_200" />
 
-
-    6
-
-
-
     <Button
         android:id="@+id/buttony"
         android:layout_width="wrap_content"
@@ -61,8 +57,8 @@
         android:layout_below="@id/radio_student"
         android:layout_alignParentStart="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="63dp"
         android:background="@drawable/rounded_textview"
         android:text="login" />
 
@@ -72,11 +68,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/radio_student"
 
-        android:background="@drawable/rounded_textview"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="62dp"
         android:layout_toRightOf="@id/buttony"
+        android:background="@drawable/rounded_textview"
         android:text="Cancel" />
 
     <TextView
@@ -86,8 +82,8 @@
         android:layout_below="@id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp"
-        android:text="Register?"
         android:background="@drawable/rounded_textview"
+        android:text="REGISTER?"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
@@ -99,8 +95,8 @@
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
 
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="28dp"
         android:onClick="onRadioButtonClicked"
         android:text=" Admin/Prof" />
 
@@ -112,8 +108,8 @@
         android:layout_alignParentStart="true"
         android:layout_centerHorizontal="true"
 
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="12dp"
         android:onClick="onRadioButtonClicked"
         android:text=" Student/Club" />
 </RelativeLayout>
