@@ -353,10 +353,6 @@ public class MainActivity extends Activity {
     public void Check_Request(View v){
         setContentView(R.layout.grant_request);
 
-    }
-
-    public void Check_aRequest(View v){
-        setContentView(R.layout.grant_arequest);
 
     }
 }
