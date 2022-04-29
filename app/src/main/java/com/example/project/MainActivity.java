@@ -328,7 +328,6 @@ public class MainActivity extends Activity {
                     bookingDetails = "" +"To_id:" +To_Id+" Subject:" +Subject+" Message: "+ Message;
                     Pending.add(bookingDetails);
                     Toast.makeText(getApplicationContext(), "Request Sent successfully", Toast.LENGTH_SHORT).show();
-                    //Maybe add a view request function if time permits
                     view_Request(view);
                 }
             }
@@ -341,7 +340,7 @@ public class MainActivity extends Activity {
         t_pending=(TextView) findViewById(R.id.TextView);
         pending = findViewById(R.id.Pending);
         ArrayAdapter<String> arr2;
-        arr2 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
+        arr2 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Pending);
         pending.setAdapter(arr2);
         t_accept=(TextView) findViewById(R.id.TextView1);
         accept = findViewById(R.id.accepted);
@@ -354,17 +353,12 @@ public class MainActivity extends Activity {
         arr1 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Rejected);
         reject.setAdapter(arr1);
 
-        Toast.makeText(getApplicationContext(), "The message sent", Toast.LENGTH_SHORT).show();
     }
 
     public void view_aRequest(View v){
         setContentView(R.layout.request_aview);
 
-        t_pending=(TextView) findViewById(R.id.TextView);
-        pending = findViewById(R.id.Pending);
-        ArrayAdapter<String> arr2;
-        arr2 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
-        pending.setAdapter(arr2);
+
         t_accept=(TextView) findViewById(R.id.TextView1);
         accept = findViewById(R.id.accepted);
         ArrayAdapter<String> arr;
@@ -411,6 +405,7 @@ public class MainActivity extends Activity {
         {
             t_print= (TextView) findViewById(R.id.textview);
             t_print.setText(Pending.get(i));
+            Pending.set(i,"");
         }
 
 

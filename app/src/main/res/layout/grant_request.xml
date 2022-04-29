@@ -28,7 +28,7 @@
         android:layout_marginTop="21dp"
         android:background="@drawable/rounded_textview"
         android:text="View Slots"
-        android:onClick="Check_Booking"/>
+        android:onClick="Check_aBooking"/>
 
     <Button
         android:id="@+id/button1"

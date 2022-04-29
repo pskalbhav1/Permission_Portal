@@ -29,7 +29,7 @@
         android:layout_marginTop="21dp"
         android:background="@drawable/rounded_textview"
         android:text="View Slots"
-        android:onClick="Check_Booking"/>
+        android:onClick="Check_aBooking"/>
 
     <Button
         android:id="@+id/button2"
@@ -41,6 +41,17 @@
         android:onClick="Check_Request"
         android:text="Grant Request"
         tools:ignore="DuplicateIds" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextView1"
+        android:text="Hi admin, welcome back"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button"
+        />
 
     <Button
         android:id="@+id/button3"

@@ -27,7 +27,7 @@
         android:layout_marginLeft="220dp"
         android:layout_marginTop="-59dp"
         android:background="@drawable/rounded_textview"
-        android:onClick="view_Request"
+        android:onClick="view_aRequest"
         android:text="View Request" />
 
     <Button
@@ -39,7 +39,7 @@
         android:layout_marginTop="21dp"
         android:background="@drawable/rounded_textview"
         android:text="View Booking"
-        android:onClick="Check_Booking"/>
+        android:onClick="Check_aBooking"/>
 
     <TextView
         android:layout_width="150dp"
@@ -60,25 +60,6 @@
         android:onClick="onLogout"
         android:text="LOGOUT" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/TextView"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        android:text="pending"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/button"
-        />
-
-    <ListView
-        android:id="@+id/Pending"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/TextView"
-        android:textAlignment="center"
-        android:layout_marginBottom="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -86,8 +67,9 @@
         android:id="@+id/TextView1"
         android:text="accepted"
         android:layout_marginBottom="10dp"
+        android:layout_marginTop="180dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/Pending"
+        android:layout_below="@id/textview"
         />
 
     <ListView
@@ -105,6 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/accepted"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
         android:text="Rejected" />
@@ -114,9 +97,10 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_below="@id/TextView2"
-        android:textAlignment="center"
-        android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
         android:textFilterEnabled="true" />
 
 </RelativeLayout>
