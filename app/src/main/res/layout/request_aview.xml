@@ -1,0 +1,87 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:background="@drawable/gradient"
+    android:layout_width="match_parent"
+    android:layout_height = "match_parent"
+    tools:context = ".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:text="PorFavor"
+        android:textColor="#E91E63"
+        android:textSize="48sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="148dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/button"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="-59dp"
+        android:background="@drawable/rounded_textview"
+        android:onClick="view_Request"
+        android:text="View Request" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="148dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/textView"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="21dp"
+        android:background="@drawable/rounded_textview"
+        android:text="View Booking"
+        android:onClick="Check_Booking"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:layout_above="@id/button"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="191dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="317dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rounded_textview"
+        android:onClick="onLogout"
+        android:text="LOGOUT" />
+
+
+    <ListView
+        android:id="@+id/accepted"
+        android:layout_width="259dp"
+        android:layout_height="269dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginBottom="152dp"
+        android:textAlignment="center"
+        android:textFilterEnabled="true" />
+
+    <ListView
+        android:id="@+id/rejected"
+        android:layout_width="259dp"
+        android:layout_height="269dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginBottom="322dp"
+        android:textAlignment="center"
+        android:textFilterEnabled="true" />
+
+
+</RelativeLayout>

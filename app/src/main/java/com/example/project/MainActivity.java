@@ -20,17 +20,22 @@ public class MainActivity extends Activity {
     List<String> ListRoom = new ArrayList<>(Arrays.asList(Booked_Rooms));
     List<String> ListBookings = new ArrayList<>(Arrays.asList());
     List<String> BookingDetails = new ArrayList<>(Arrays.asList());
-    ListView booked;
-    Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request,b_send;
+    ListView booked, accept, reject;
+    Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request,b_send,b_grant,b_deny;
     EditText ed_name, ed_regno,ed_psw,ed_roomno,ed_date,ed_time,ed_to,ed_subject,ed_message;
     TextView t_login,t_register;
-    boolean admin=false,student=false,status=false;
+    boolean admin=false,student=false;
+    String status="0";
+    String bookingDetails="";
     String role="admin";
     String regno="m",name="admin",psw="admin",c_role,Room_No="NLH203",Date="123456",Time="2",To_Id="E1",Subject="Hi",Message="Hello";
     private DBHandler dbHandler;
     private DBSlot dbSlot;
     private DBRequest dbRequest;
     int j;
+    List<String> Pending= new ArrayList<>(Arrays.asList());
+    List<String> Accepted= new ArrayList<>(Arrays.asList());
+    List<String> Rejected= new ArrayList<>(Arrays.asList());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -304,7 +309,7 @@ public class MainActivity extends Activity {
         ed_to= (EditText) findViewById(R.id.editText);
         ed_subject = (EditText) findViewById(R.id.editText2);
         ed_message  = (EditText) findViewById(R.id.editText3);
-        b_send=(Button) findViewById(R.id.button);
+        b_send=(Button) findViewById(R.id.buttonx);
         dbRequest = new DBRequest(MainActivity.this);
         b_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -318,14 +323,41 @@ public class MainActivity extends Activity {
                     onRequest(view);
                 }
                 else {
-                    dbRequest.addNewCourse(To_Id,Subject,Message,status);
+                    bookingDetails = "" +"To_id:" +To_Id+" Subject:" +Subject+" Message: "+ Message;
+                    Pending.add(bookingDetails);
                     Toast.makeText(getApplicationContext(), "Request Sent successfully", Toast.LENGTH_SHORT).show();
                     //Maybe add a view request function if time permits
-                    onProfile_student(view);
+                    view_Request(view);
                 }
             }
         });
 
+    }
+
+    public void view_Request(View v){
+        setContentView(R.layout.request_view);
+        accept = findViewById(R.id.accepted);
+        ArrayAdapter<String> arr;
+        arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
+        accept.setAdapter(arr);
+        reject = findViewById(R.id.rejected);
+        ArrayAdapter<String> arr1;
+        arr1 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Rejected);
+        reject.setAdapter(arr1);
+
+        Toast.makeText(getApplicationContext(), "The message sent", Toast.LENGTH_SHORT).show();
+    }
+
+    public void view_aRequest(View v){
+        setContentView(R.layout.request_aview);
+        accept = findViewById(R.id.accepted);
+        ArrayAdapter<String> arr;
+        arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Accepted);
+        accept.setAdapter(arr);
+        reject = findViewById(R.id.rejected);
+        ArrayAdapter<String> arr1;
+        arr1 = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,Rejected);
+        reject.setAdapter(arr1);
     }
 
     public void Check_Booking(View v){
@@ -352,7 +384,48 @@ public class MainActivity extends Activity {
 
     public void Check_Request(View v){
         setContentView(R.layout.grant_request);
+        dbRequest = new DBRequest(MainActivity.this);
+        b_booking=(Button) findViewById(R.id.button);
+        b_request=(Button) findViewById(R.id.button1);
+        b_logout=(Button) findViewById(R.id.button3);
+        b_grant=(Button) findViewById(R.id.button4);
+        b_deny=(Button) findViewById(R.id.button5);
 
+        b_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Check_aBooking(v);
+            }
+        });
+        b_request.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                view_aRequest(v);
+            }
+        });
+
+        b_grant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Accepted.add("bhbj");
+                view_aRequest(v);
+            }
+        });
+
+        b_deny.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Rejected.add("hvjbnknbvcxfcgvbhnj");
+                view_aRequest(v);
+            }
+        });
+
+        b_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onLogout(v);
+            }
+        });
 
     }
 }
