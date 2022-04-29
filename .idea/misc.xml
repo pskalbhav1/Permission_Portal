@@ -21,6 +21,11 @@
         <entry key="app/src/main/res/layout/gradient.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/login.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/rounded_textview.xml" value="0.17325227963525835" />
+<<<<<<< HEAD
+=======
+        <entry key="app/src/main/res/layout/slot.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/slot_view.xml" value="0.22" />
+>>>>>>> f8dc5026d60b7d450bee645a26678f8eba840cf4
       </map>
     </option>
   </component>
