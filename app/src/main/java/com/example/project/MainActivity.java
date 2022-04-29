@@ -187,7 +187,7 @@ public class MainActivity extends Activity {
         b_booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Check_Booking(v);
+                Check_aBooking(v);
             }
         });
         b_request.setOnClickListener(new View.OnClickListener() {
@@ -283,7 +283,7 @@ public class MainActivity extends Activity {
                 else {
                     dbSlot.addNewCourse(Room_No,Date, Time,Booked);
                     Booked_Rooms[i]=Room_No;
-                    String bookingDetails = "" +"Room No:" +Room_No+"Date:" +Date+" Time: "+ Time;
+                    String bookingDetails = "" +"Room No:" +Room_No+" \nDate:" +Date+" \nTime: "+ Time;
                     ListRoom.add(Room_No);
                     BookingDetails.add(bookingDetails);
 
@@ -340,8 +340,23 @@ public class MainActivity extends Activity {
         Toast.makeText(getApplicationContext(), "The room booked is"+Booked_Rooms[j], Toast.LENGTH_SHORT).show();
     }
 
+    public void Check_aBooking(View v){
+        setContentView(R.layout.slot_aview);
+
+        booked = findViewById(R.id.list);
+        //ListBookings.add(Booked_Rooms[j]);
+        ArrayAdapter<String> arr;
+        arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,BookingDetails);
+        booked.setAdapter(arr);
+    }
+
     public void Check_Request(View v){
         setContentView(R.layout.grant_request);
+
+    }
+
+    public void Check_aRequest(View v){
+        setContentView(R.layout.grant_arequest);
 
     }
 }
