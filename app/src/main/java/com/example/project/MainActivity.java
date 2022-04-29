@@ -244,7 +244,23 @@ public class MainActivity extends Activity {
     }
 
     public void onLogout(View v){
+
         setContentView(R.layout.activity_main);
+        t_login=(TextView) findViewById(R.id.textView1);
+        t_register=(TextView) findViewById(R.id.textView2);
+
+        t_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onLogin(view);
+            }
+        });
+        t_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRegister(view);
+            }
+        });
     }
 
     public void onBooking(View v){
@@ -257,33 +273,33 @@ public class MainActivity extends Activity {
         boolean Booked=true;
         b_booking=(Button) findViewById(R.id.button);
         b_booking.setOnClickListener(new View.OnClickListener() {
-                                         @Override
-                                         public void onClick(View view) {
-                                             int i=2;
-                                             Room_No = ed_roomno.getText().toString();
-                                             Date = ed_date.getText().toString();
-                                             Time= ed_time.getText().toString();
+            @Override
+            public void onClick(View view) {
+                int i=2;
+                Room_No = ed_roomno.getText().toString();
+                Date = ed_date.getText().toString();
+                Time= ed_time.getText().toString();
 
-                                             if (ed_roomno.getText().toString().isEmpty() || ed_date.getText().toString().isEmpty() || ed_time.getText().toString().isEmpty())
-                                             {
-                                                 Toast.makeText(getApplicationContext(), "Fill in all the details", Toast.LENGTH_SHORT).show();
-                                                 onBooking(view);
-                                             } else if(ListRoom.contains(Room_No)){
-                                                 Toast.makeText(getApplicationContext(), "Room already in use, Fill again", Toast.LENGTH_SHORT).show();
-                                                 onBooking(view);
-                                             }
-                                             else {
-                                                 dbSlot.addNewCourse(Room_No,Date, Time,Booked);
-                                                 Booked_Rooms[i]=Room_No;
-                                                 ListRoom.add(Room_No);
-                                                 j=i;
-                                                 Toast.makeText(getApplicationContext(), "Room Booked successfully", Toast.LENGTH_SHORT).show();
-                                                 Check_Booking(view);
-                                                 i=i+1;
-                                             }
+                if (ed_roomno.getText().toString().isEmpty() || ed_date.getText().toString().isEmpty() || ed_time.getText().toString().isEmpty())
+                {
+                    Toast.makeText(getApplicationContext(), "Fill in all the details", Toast.LENGTH_SHORT).show();
+                    onBooking(view);
+                } else if(ListRoom.contains(Room_No)){
+                    Toast.makeText(getApplicationContext(), "Room already in use, Fill again", Toast.LENGTH_SHORT).show();
+                    onBooking(view);
+                }
+                else {
+                    dbSlot.addNewCourse(Room_No,Date, Time,Booked);
+                    Booked_Rooms[i]=Room_No;
+                    ListRoom.add(Room_No);
+                    j=i;
+                    Toast.makeText(getApplicationContext(), "Room Booked successfully", Toast.LENGTH_SHORT).show();
+                    Check_Booking(view);
+                    i=i+1;
+                }
 
-                                         }
-                                     });
+            }
+        });
 
     }
 
@@ -293,16 +309,21 @@ public class MainActivity extends Activity {
 
     public void Check_Booking(View v){
         setContentView(R.layout.slot_view);
-        Toast.makeText(getApplicationContext(), Booked_Rooms[j], Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(getApplicationContext(), "The room booked is"+Booked_Rooms[j], Toast.LENGTH_SHORT).show();
         ListBookings.add(Booked_Rooms[j]);
         k=k+1;
+        TextView t_bookings;
+        t_bookings=(TextView)findViewById(R.id.textview);
         for(int i=0;i< ListBookings.size();i++)
         {
-            Toast.makeText(getApplicationContext(), ListBookings.get(i), Toast.LENGTH_SHORT).show();
+            t_bookings.setText(ListBookings.get(i));
+            //add list view
         }
     }
 
     public void Check_Request(View v){
+
         setContentView(R.layout.grant_request);
     }
 }
