@@ -68,4 +68,18 @@
         android:onClick="onLogout"
         android:text="LOGOUT" />
 
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="259dp"
+        android:layout_height="269dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="167dp"
+        android:textAlignment="center"
+        android:textFilterEnabled="true" />
+
+
 </RelativeLayout>

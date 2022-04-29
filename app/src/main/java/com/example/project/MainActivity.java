@@ -21,6 +21,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.RadioButton;
 
+import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -31,8 +32,9 @@ public class MainActivity extends Activity {
     String[] Booked_Rooms = {"NLH203","NLH304","","","","",""};
     List<String> ListRoom = new ArrayList<>(Arrays.asList(Booked_Rooms));
     List<String> ListBookings = new ArrayList<>(Arrays.asList());
+    List<String> BookingDetails = new ArrayList<>(Arrays.asList());
     String[] IDs={"","","","",""};
-
+    ListView booked;
     Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request,b_send;
     EditText ed_name, ed_regno,ed_psw,ed_roomno,ed_date,ed_time,ed_to,ed_subject,ed_message;
     TextView t_login,t_register;
@@ -301,7 +303,10 @@ public class MainActivity extends Activity {
                 else {
                     dbSlot.addNewCourse(Room_No,Date, Time,Booked);
                     Booked_Rooms[i]=Room_No;
+                    String bookingDetails = "" +"Room No:" +Room_No+"Date:" +Date+" Time: "+ Time;
                     ListRoom.add(Room_No);
+                    BookingDetails.add(bookingDetails);
+
                     j=i;
                     Toast.makeText(getApplicationContext(), "Room Booked successfully", Toast.LENGTH_SHORT).show();
                     Check_Booking(view);
@@ -332,16 +337,24 @@ public class MainActivity extends Activity {
     public void Check_Booking(View v){
         setContentView(R.layout.slot_view);
 
-        Toast.makeText(getApplicationContext(), "The room booked is"+Booked_Rooms[j], Toast.LENGTH_SHORT).show();
+        booked = findViewById(R.id.list);
         ListBookings.add(Booked_Rooms[j]);
-        k=k+1;
-        TextView t_bookings;
-        t_bookings=(TextView)findViewById(R.id.textview);
-        for(int i=0;i< ListBookings.size();i++)
-        {
-            t_bookings.setText(ListBookings.get(i));
-            //add list view
-        }
+        ArrayAdapter<String> arr;
+        arr = new ArrayAdapter<String>(this, android.support.constraint.R.layout.support_simple_spinner_dropdown_item,BookingDetails);
+        booked.setAdapter(arr);
+
+
+
+        Toast.makeText(getApplicationContext(), "The room booked is"+Booked_Rooms[j], Toast.LENGTH_SHORT).show();
+
+
+        //TextView t_bookings;
+        //t_bookings=(TextView)findViewById(R.id.textview);
+//        for(int i=0;i< ListBookings.size();i++)
+//        {
+//            t_bookings.setText(ListBookings.get(i));
+//            //add list view
+//        }
     }
 
     public void Check_Request(View v){
