@@ -11,7 +11,6 @@
         <entry key="..\:/Users/praveen/AndroidStudioProjects/project/app/src/main/res/layout/profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/praveen/AndroidStudioProjects/project/app/src/main/res/layout/profile_student.xml" value="0.13451086956521738" />
         <entry key="..\:/Users/praveen/AndroidStudioProjects/project/app/src/main/res/layout/register.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/praveen/AndroidStudioProjects/project/app/src/main/res/layout/request.xml" value="0.22" />
         <entry key="..\:/Users/praveen/AndroidStudioProjects/project/app/src/main/res/layout/slot.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/praveen/AndroidStudioProjects/project/app/src/main/res/layout/slot_view.xml" value="0.20416666666666666" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3125" />
@@ -24,6 +23,7 @@
         <entry key="app/src/main/res/layout/register.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/request.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/rounded_textview.xml" value="0.17325227963525835" />
+        <entry key="app/src/main/res/layout/slot.xml" value="0.2671875" />
       </map>
     </option>
   </component>
