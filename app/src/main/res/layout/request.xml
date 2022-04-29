@@ -46,34 +46,43 @@
         android:id="@+id/editText"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="270dp"
+        android:layout_marginEnd="151dp"
         android:focusable="true"
         android:hint="ID to be sent to"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/purple_200" />
 
     <EditText
+        android:id="@+id/editText2"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:ems="10"
-        android:layout_centerHorizontal = "true"
-        android:id="@+id/editText2"
         android:layout_below="@+id/editText"
-        android:textColorHint="@color/purple_200"
-        android:hint="Subject" />
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:hint="Subject"
+        android:inputType="text"
+        android:textColorHint="@color/purple_200" />
 
     <EditText
+        android:id="@+id/editText3"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:ems="10"
-        android:layout_centerHorizontal = "true"
-        android:id="@+id/editText3"
         android:layout_below="@+id/editText2"
-        android:textColorHint="@color/purple_200"
-        android:hint="Message" />
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="39dp"
+        android:ems="10"
+        android:hint="Message"
+        android:inputType="text"
+        android:textColorHint="@color/purple_200" />
 
     <Button
         android:id="@+id/button3"
