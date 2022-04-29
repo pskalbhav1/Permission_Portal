@@ -71,11 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/radio_student"
 
+        android:background="@drawable/rounded_textview"
         android:layout_centerInParent="true"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="64dp"
         android:layout_toRightOf="@id/buttony"
-        android:background="@drawable/rounded_textview"
         android:text="Cancel" />
 
     <TextView

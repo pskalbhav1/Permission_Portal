@@ -31,9 +31,10 @@ public class MainActivity extends Activity {
     String[] Booked_Rooms = {"NLH203","NLH304","","","","",""};
     List<String> ListRoom = new ArrayList<>(Arrays.asList(Booked_Rooms));
     List<String> ListBookings = new ArrayList<>(Arrays.asList());
+    String[] IDs={"","","","",""};
 
-    Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request;
-    EditText ed_name, ed_regno,ed_psw,ed_roomno,ed_date,ed_time;
+    Button b_login,b_register,b_cancel,b_logout,b_book,b_booking,b_request,b_send;
+    EditText ed_name, ed_regno,ed_psw,ed_roomno,ed_date,ed_time,ed_to,ed_subject,ed_message;
     TextView t_login,t_register;
     boolean admin=false,student=false;
     String role="admin";
@@ -106,11 +107,14 @@ public class MainActivity extends Activity {
                 {
                     Toast.makeText(getApplicationContext(),"Register first", Toast.LENGTH_SHORT).show();
                     onRegister(v);
+                }else if(admin==true && student==true){
+                    Toast.makeText(getApplicationContext(),"Select only one option",Toast.LENGTH_SHORT).show();
+                    onLogin(v);
                 }
 
                 else if(ed_regno.getText().toString().isEmpty() || ed_psw.getText().toString().isEmpty() || ed_name.getText().toString().isEmpty() || c_role==" ")
                 {
-                    Toast.makeText(getApplicationContext(),"Fill in all the details", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Fill in all the details correctly", Toast.LENGTH_SHORT).show();
                     onLogin(v);
                 }else if(query.contains(ed_name.getText().toString())  && query.contains(ed_psw.getText().toString()) && student && !admin)
                 {
@@ -150,7 +154,7 @@ public class MainActivity extends Activity {
         b_register=(Button) findViewById(R.id.button);
         b_cancel = (Button) findViewById(R.id.button2);
         t_login = (TextView) findViewById(R.id.TextView1);
-        ed_name = (EditText) findViewById(R.id.editText);
+        ed_name = (EditText) findViewById(R.id.editText1);
         ed_psw = (EditText) findViewById(R.id.editText2);
         ed_regno = (EditText) findViewById(R.id.editText3);
 
@@ -264,8 +268,14 @@ public class MainActivity extends Activity {
     }
 
     public void onBooking(View v){
-
         setContentView(R.layout.slot);
+        b_book=(Button) findViewById(R.id.button3);
+        b_book.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBooking(v);
+            }
+        });
         ed_roomno = (EditText) findViewById(R.id.editText);
         ed_date = (EditText) findViewById(R.id.editText2);
         ed_time = (EditText) findViewById(R.id.editText3);
@@ -304,7 +314,19 @@ public class MainActivity extends Activity {
     }
 
     public void onRequest(View v){
+
         setContentView(R.layout.request);
+        ed_to= (EditText) findViewById(R.id.editText);
+        ed_subject = (EditText) findViewById(R.id.editText2);
+        ed_message  = (EditText) findViewById(R.id.editText3);
+        b_send=(Button) findViewById(R.id.button);
+        b_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
     public void Check_Booking(View v){
