@@ -7,16 +7,16 @@
     tools:context = ".MainActivity">
 
     <TextView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:text = "PorFavor"
-        android:id = "@+id/textView"
-        android:layout_centerHorizontal = "true"
-        android:layout_alignParentTop = "true"
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:fontFamily="@font/alfa_slab_one"
+        android:text="PorFavor"
         android:textColor="#E91E63"
         android:textSize="48sp"
-        android:textStyle="normal|bold" />/>
+        android:textStyle="normal|bold" />
 
     <TextView
         android:id="@+id/Textview"
@@ -53,7 +53,6 @@
     6
 
 
-
     <Button
         android:id="@+id/buttony"
         android:layout_width="wrap_content"
@@ -72,11 +71,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/radio_student"
 
-        android:background="@drawable/rounded_textview"
         android:layout_centerInParent="true"
         android:layout_marginLeft="13dp"
         android:layout_marginTop="64dp"
         android:layout_toRightOf="@id/buttony"
+        android:background="@drawable/rounded_textview"
         android:text="Cancel" />
 
     <TextView
@@ -85,9 +84,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="77dp"
-        android:text="Register?"
+        android:layout_marginTop="58dp"
         android:background="@drawable/rounded_textview"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="20dp"
+        android:text="Register?"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
