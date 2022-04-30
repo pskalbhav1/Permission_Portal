@@ -65,8 +65,9 @@
         android:layout_marginStart="138dp"
         android:layout_marginTop="37dp"
         android:ems="10"
+        android:focusable="false"
         android:hint="Date"
-        android:inputType="text"
+        android:inputType="date"
         android:textColorHint="@color/purple_200" />
 
     <EditText
@@ -80,7 +81,8 @@
         android:layout_marginTop="39dp"
         android:ems="10"
         android:hint="Time"
-        android:inputType="text"
+        android:inputType="time"
+        android:focusable="false"
         android:textColorHint="@color/purple_200" />
 
     <Button

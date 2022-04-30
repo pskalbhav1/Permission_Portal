@@ -1,18 +1,23 @@
 package com.example.project;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 import android.widget.RadioButton;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 public class MainActivity extends Activity {
@@ -257,6 +262,7 @@ public class MainActivity extends Activity {
     }
 
     public void onBooking(View v){
+
         setContentView(R.layout.slot);
         b_book=(Button) findViewById(R.id.button3);
         b_book.setOnClickListener(new View.OnClickListener() {
@@ -267,7 +273,61 @@ public class MainActivity extends Activity {
         });
         ed_roomno = (EditText) findViewById(R.id.editText);
         ed_date = (EditText) findViewById(R.id.editText2);
+
+        ed_date.setOnClickListener(new View.OnClickListener() {
+            int mYear, mMonth, MDate;
+            @Override
+            public void onClick(View view) {
+                if(view== ed_date)
+                {
+                    final Calendar calendar = Calendar.getInstance();
+                    mYear=calendar.get(Calendar.YEAR);
+                    mMonth=calendar.get(Calendar.MONTH);
+                    MDate=calendar.get((Calendar.DATE));
+                    DatePickerDialog datePickerDialog = new DatePickerDialog (view.getContext(), new DatePickerDialog.OnDateSetListener () {
+                        @Override
+                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            ed_date.setText ( dayOfMonth + "/" + (month + 1) + "/" + year );
+                        }
+                    }, mYear, mMonth, MDate );
+                    datePickerDialog.show ();
+                }
+
+            }});
+
         ed_time = (EditText) findViewById(R.id.editText3);
+
+        ed_time.setOnClickListener(new View.OnClickListener() {
+            int mYear, mMonth, MDate;
+            @Override
+            public void onClick(View view) {
+                if(view== ed_time)
+                {
+                    final Calendar mcurrentTime = Calendar.getInstance();
+                    int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                    int minute = mcurrentTime.get(Calendar.MINUTE);
+
+                    TimePickerDialog timePickerDialog = new TimePickerDialog(view.getContext(), new TimePickerDialog.OnTimeSetListener() {
+
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                            String min=""+selectedMinute;
+                            if(selectedMinute<10)
+                            { min ="0"+selectedMinute;
+                            }
+                            String hr =""+selectedHour;
+                            if(selectedHour<10)
+                            { hr ="0"+selectedHour;
+                            }
+                            ed_time.setText(hr+":"+ min);
+                        }
+                    }, hour, minute, false);
+                    timePickerDialog.show();
+                }
+
+            }});
+
+
         dbSlot = new DBSlot(MainActivity.this);
         boolean Booked=true;
         b_booking=(Button) findViewById(R.id.button);
@@ -304,6 +364,7 @@ public class MainActivity extends Activity {
         });
 
     }
+
 
     public void onRequest(View v){
 
